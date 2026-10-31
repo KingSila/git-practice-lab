@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f4ef">
+  <title>Daymark — a simple task tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Daymark home"><span class="brand-mark">d</span><span>daymark</span></a>
+      <span class="local-note"><span class="status-dot"></span> Saved on this device</span>
+    </header>
+
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">YOUR SPACE TO FOCUS</p>
+      <h1 id="page-title">Make room for<br><span>what matters.</span></h1>
+      <p class="subtitle">A little progress, one task at a time.</p>
+    </section>
+
+    <section class="task-card" aria-label="Task tracker">
+      <form id="task-form" class="task-form">
+        <label class="sr-only" for="task-input">New task</label>
+        <input id="task-input" name="task" type="text" maxlength="120" placeholder="What would you like to do?" autocomplete="off" required>
+        <button type="submit" class="add-button"><span aria-hidden="true">＋</span> Add task</button>
+      </form>
+
+      <div class="list-heading">
+        <div><h2>Your tasks</h2><span id="task-count" class="count">0 tasks</span></div>
+        <button id="clear-completed" class="text-button" type="button" disabled>Clear completed</button>
+      </div>
+
+      <ul id="task-list" class="task-list" aria-live="polite"></ul>
+      <div id="empty-state" class="empty-state">
+        <div class="empty-icon" aria-hidden="true">✳</div>
+        <p class="empty-title">A fresh start.</p>
+        <p>Your list is clear. Add a task when you're ready.</p>
+      </div>
+
+      <footer class="card-footer"><span>Small steps count.</span><span id="progress-label">0 of 0 complete</span></footer>
+    </section>
+    <p class="page-footer">Made for your next good idea <span aria-hidden="true">✦</span></p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
